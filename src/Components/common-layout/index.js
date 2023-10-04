@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Navbar from "../navbar";
-import Banner from "../banner";
 import MediaRow from "../media-row";
+import Banner from "../banner";
 
 export default function CommonLayout({ mediaData }) {
   return (
@@ -25,13 +25,11 @@ export default function CommonLayout({ mediaData }) {
           />
           <section className="md:space-y-16">
             {mediaData && mediaData.length
-              ? mediaData.map((item) => (
-                  <MediaRow title={item.title} medias={item.medias} />
+              ? mediaData.map((item,index) => (
+                  <MediaRow key={index} title={item.title} medias={item.medias} />
                 ))
               : null}
-              
           </section>
-        
         </div>
       </>
     </motion.div>
