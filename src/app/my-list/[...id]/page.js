@@ -40,7 +40,7 @@ export default function MyList() {
     }
 
     extractFavorites();
-  }, [loggedInAccount]);
+  }, [session?.user?.uid, setFavorites, setPageLoader, loggedInAccount]);
 
   if (session === null) return <UnauthPage />;
   if (loggedInAccount === null) return <ManageAccounts />;

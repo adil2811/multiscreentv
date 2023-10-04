@@ -57,7 +57,7 @@ export default function ManageAccounts() {
 
   useEffect(() => {
     getAllAccounts();
-  }, []);
+  }, [getAllAccounts]);
 
   async function handleSave() {
     const res = await fetch("/api/account/create-account", {
@@ -140,8 +140,8 @@ export default function ManageAccounts() {
   return (
     <div className="min-h-screen flex justify-center flex-col items-center relative">
       <div className="flex justify-center flex-col items-center">
-        <h1 className="text-white font-bold text-[54px] my-[36px]">
-          Who's Watching?
+        <h1 className="text-white font-bold text-[54px]">
+          Who&apos;s  Watching?
         </h1>
         <ul className="flex p-0 my-[25px]">
           {accounts && accounts.length

@@ -95,7 +95,8 @@ export default function Browse() {
     }
 
     getAllMedias();
-  }, []);
+  }, [loggedInAccount?._id, session?.user?.uid, setMediaData, setPageLoader]);
+
 
   console.log(mediaData)
 
